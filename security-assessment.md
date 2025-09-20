@@ -17,7 +17,7 @@ A **false positive** occurs when a security tool flags something as a threat whe
 
 ### False Positives and Security Assessments
 
-Pentesting is known to produce false positives, especially during the initial discovery phase when automated scanning tools are used. These tools are great for quickly finding a large number of potential vulnerabilities, but they can't tell you if a weakness is truly exploitable. A skilled pentester manually validates these results, providing a report with a much higher degree of accuracy and a clear focus on the most critical, exploitable risks. This makes a penetration test report far more valuable than a raw scan report.
+Security Assessments are known to produce false positives, especially during the initial discovery phase when automated scanning tools are used. These tools are great for quickly finding a large number of potential vulnerabilities, but they can't tell you if a weakness is truly exploitable. A skilled pentester manually validates these results, providing a report with a much higher degree of accuracy and a clear focus on the most critical, exploitable risks. This makes a penetration test report far more valuable than a raw scan report.
 
 ### Disclaimer:
 Information on this page is not proprietary to Pentest DIY - in fact it is industry standards and should be widely adopted. It is a curated set of terms and processes explained for our non technical users.
