@@ -3,10 +3,10 @@ name: Generate Directory Index
 on:
   push:
     branches:
-      - main
+      - main  # Make sure this is the branch your GitHub Pages is served from
 
 jobs:
-  build:
+  generate-index:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -15,10 +15,11 @@ jobs:
       - name: Generate Directory Listing
         uses: gacts/directory-listing@v1
         with:
+          # This specifies the directory to list AND the name of the output file.
           target: './index.html'
-          ignore: '[]' # Add this line
 
-      - name: Commit and Push Changes
-        uses: stefanzweifel/git-auto-commit-action@v5
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          commit_message: "docs: update directory index"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: '.' # This is the directory that will be deployed.
