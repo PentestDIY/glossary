@@ -8,6 +8,8 @@ on:
 jobs:
   generate-index:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # Grants the workflow permission to push changes
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -21,5 +23,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          #github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: '.' # This is the directory that will be deployed.
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: '.' # The directory that will be deployed.
