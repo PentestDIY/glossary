@@ -11,16 +11,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          persist-credentials: false
-          fetch-depth: 0
 
       - name: Generate Directory Listing
-        uses: jvandemo/gh-pages-directory-listing@v2.2.0
+        uses: gacts/directory-listing@v1
         with:
-          # The directory to generate the index for (e.g., /docs or /)
-          # Make sure this matches the base directory for your pages site
-          folder: '.'
+          # The directory to generate the index for
+          target: './'
           
           # The path for the generated index file
           output: 'index.html'
