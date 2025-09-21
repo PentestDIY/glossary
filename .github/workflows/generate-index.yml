@@ -3,7 +3,7 @@ name: Generate Directory Index
 on:
   push:
     branches:
-      - main  # Or whichever branch your GitHub Pages is served from
+      - main  # Or your GitHub Pages branch
 
 jobs:
   build:
@@ -15,11 +15,8 @@ jobs:
       - name: Generate Directory Listing
         uses: gacts/directory-listing@v1
         with:
-          # The directory to generate the index for
-          target: './'
-          
-          # The path for the generated index file
-          output: 'index.html'
+          # The directory to generate the index for, ending with the output filename
+          target: './index.html'
 
       - name: Commit and Push Changes
         uses: stefanzweifel/git-auto-commit-action@v5
